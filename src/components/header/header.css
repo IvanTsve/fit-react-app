@@ -1,0 +1,21 @@
+.site-header {
+    display: flex;
+    align-items: center;
+    background-color: #d35400;
+    padding: 0 1rem;
+}
+
+.header-navigation  {
+    margin-left: auto;
+}
+
+.header-navigation ul {
+    display: flex;
+    padding-bottom: 0;
+    margin-right: 1em;
+    color: #ffffff;
+}
+
+.header-navigation ul li {
+    padding-right: 15px;
+}
