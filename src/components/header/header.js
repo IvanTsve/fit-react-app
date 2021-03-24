@@ -15,7 +15,7 @@ class Header extends Component {
                         <li><Link to="/contact-us">Contacts</Link></li>
                         <li><Link to="/user/login">Login</Link></li>
                         <li><Link to="/user/register">Register</Link></li>
-                        <li><Link to="/user">Logout</Link></li>
+                        <li><Link to="/user/logout">Logout</Link></li>
                     </ul>
                 </nav>
             </header>
