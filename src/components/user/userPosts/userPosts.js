@@ -8,6 +8,21 @@ function userPost(params) {
                <p className="post-introduction">lorem ipsum lorem ipsumlorem ipsum</p>
                <Link className="CTA-read" to="#">ReadMore</Link>
                </div>
+               <div className="post">
+               <img src="https://www.jobycodirect.com/images/items/9thscience.jpg" alt="profile picture" />
+               <p className="post-introduction">lorem ipsum lorem ipsumlorem ipsum</p>
+               <Link className="CTA-read" to="#">ReadMore</Link>
+               </div>
+               <div className="post">
+               <img src="https://www.jobycodirect.com/images/items/9thscience.jpg" alt="profile picture" />
+               <p className="post-introduction">lorem ipsum lorem ipsumlorem ipsum</p>
+               <Link className="CTA-read" to="#">ReadMore</Link>
+               </div>
+               <div className="post">
+               <img src="https://www.jobycodirect.com/images/items/9thscience.jpg" alt="profile picture" />
+               <p className="post-introduction">lorem ipsum lorem ipsumlorem ipsum</p>
+               <Link className="CTA-read" to="#">ReadMore</Link>
+               </div>
             </section>
     )
 }

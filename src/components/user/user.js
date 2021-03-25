@@ -1,12 +1,11 @@
 import UserPost from './userPosts/userPosts';
 import UserProfile from './userProfile/userProfile';
 
+import './user.css';
 
 function User(params) {
     return (
         <main className="site-main">
-            <h1>User Profile</h1>
-
             <UserProfile />
             <UserPost />
 
