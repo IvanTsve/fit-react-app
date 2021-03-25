@@ -1,0 +1,14 @@
+.user-posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2em 0;
+}
+
+.user-posts .post {
+    margin: 1em;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: blanchedalmond;
+}
