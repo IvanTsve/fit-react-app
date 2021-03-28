@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             
             <header className="site-header">
-                <Link to="/">GymRats</Link>
+                <Link to="/">Brain Gains</Link>
                 <nav className="header-navigation">
                     <ul>
                         <li><Link to="/">Home</Link></li>

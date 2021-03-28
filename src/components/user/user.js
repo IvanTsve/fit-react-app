@@ -5,9 +5,12 @@ import './user.css';
 
 function User(params) {
     return (
-        <main className="site-main">
-            <UserProfile />
-            <UserPost />
+        <main >
+            <div className="site-main">
+                <UserProfile />
+                <UserPost />
+            </div>
+
 
         </main>
     )

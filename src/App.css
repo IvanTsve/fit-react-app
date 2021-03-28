@@ -38,3 +38,27 @@ a {
   text-decoration: none; 
   color: #ffffff;
 }
+
+.site-main {
+  
+  background-color: rgb(184, 153, 184);
+}
+
+.site-cta {
+  margin: 4em auto;
+  border: 2px solid white;
+  background: #1abc9c;
+  border-radius: 5px;
+  padding: 0.4em 1em;
+  letter-spacing: 4px;
+  color: white;
+  display: inline-block;
+}
+
+.site-cta:hover {
+  background: white;
+  color: #1abc9c;
+  transition: 0.4s;
+  border: 2px solid #1abc9c;
+
+}
