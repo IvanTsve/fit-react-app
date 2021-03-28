@@ -1,12 +1,20 @@
 import { Link } from 'react-router-dom';
 import './register.css';
 
+
 function registerPage(params) {
+
+    function onSubmitHandler(e) {
+        e.preventDefault();
+        console.log(e.target.uname.value);
+    }
     return (
+
         <main>
 
+
             <div className="register-page img-background">
-                <form>
+                <form onSubmit={onSubmitHandler}>
                     <h1>SIGN UP</h1>
                     <div className="icon">
                         <i className="fas fa-user-circle"/>
@@ -27,6 +35,8 @@ function registerPage(params) {
 
                 </form>
             </div>
+
+
         </main>
 
     )
