@@ -46,19 +46,40 @@ main {
 
 .site-cta {
   margin: 4em auto;
-  border: 2px solid white;
-  background: #1abc9c;
-  border-radius: 5px;
-  padding: 0.4em 1em;
-  letter-spacing: 4px;
+
+  border: none;
+  background: #d35400;
+  padding: 0.4em 3em;
+  letter-spacing: 5px;
   color: white;
   display: inline-block;
+
 }
 
 .site-cta:hover {
-  background: white;
-  color: #1abc9c;
-  transition: 0.4s;
-  border: 2px solid #1abc9c;
+  opacity: 0.8;
+}
 
+
+.img-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  color: white;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 15px;
+}
+
+.img-background:before {
+  content: '';
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
 }

@@ -5,7 +5,7 @@ function registerPage(params) {
     return (
         <main>
 
-            <div className="register-page">
+            <div className="register-page img-background">
                 <form>
                     <h1>SIGN UP</h1>
                     <div className="icon">

@@ -8,7 +8,7 @@ class Main extends Component {
     render() {
         return (
             <main>
-                <div className="site-home">
+                <div className="site-home img-background">
                     <div className="site-about">
                         <h1>We are brain gains</h1>
                         <div>

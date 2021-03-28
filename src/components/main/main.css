@@ -1,22 +1,6 @@
 .site-home {
     background-image: url(/src/images/photo-1534258936925-c58bed479fcb.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    color: white;
-    height: 100%;
-}
-
-.site-home:before {
-    content: '';
-    display: block;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+    
 }
 
 .site-about  {
