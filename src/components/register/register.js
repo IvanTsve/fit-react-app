@@ -9,10 +9,7 @@ function registerPage(params) {
         console.log(e.target.uname.value);
     }
     return (
-
         <main>
-
-
             <div className="register-page img-background">
                 <form onSubmit={onSubmitHandler}>
                     <h1>SIGN UP</h1>
@@ -35,10 +32,7 @@ function registerPage(params) {
 
                 </form>
             </div>
-
-
         </main>
-
     )
 }
 
