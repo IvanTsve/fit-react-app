@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 
+import './contacts.css';
+
 class Contacts extends Component {
     render() {
         return (
-            <main className="site-main">
-                <h1>Contacts Page</h1>
+            <main>
+                
             </main>
         )
+
     }
 }
 

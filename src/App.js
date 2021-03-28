@@ -3,10 +3,12 @@ import './App.css';
 import { Switch, Route } from 'react-router';
 
 import Header from './components/header/header';
+import Footer from './components/footer/footer';
 import Main from './components/main/main';
 import ContactUs from './components/contacts/contacts';
 import User from './components/user/user';
-import Footer from './components/footer/footer';
+import Register from './components/register/register';
+
 
 function App() {
   return (
@@ -17,7 +19,7 @@ function App() {
         <Route path="/contact-us" exact component={ContactUs} />
         <Route path="/user/profile" exact component={User} />
         <Route path="/user/login" exact component={ContactUs} />
-        <Route path="/user/register" exact component={ContactUs} />
+        <Route path="/user/register" exact component={Register} />
         <Route path="/user/logout" exact component={ContactUs} />
       </Switch>
       <Footer />

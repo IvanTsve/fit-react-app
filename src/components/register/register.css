@@ -1,0 +1,71 @@
+.register-page {
+    background-image: url(/src/images/young-girl-playing-dumbbell-exercise-fitness_34777-396.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 15px;
+}
+
+.register-page:before {
+    content: '';
+    display: block;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+}
+form{
+    position: relative;
+}
+
+.formcontainer {
+    text-align: center;
+    margin: 24px 50px 12px;
+}
+
+.container {
+    padding: 16px 0;
+    text-align: left;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 1.2em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 2em;
+}
+
+.icon {
+    font-size: 300px;
+    display: flex;
+    justify-content: flex-start;
+    color: #d35400;
+    margin: 0.2em;
+}
+
+button {
+    background-color: #4286f4;
+    color: white;
+    padding: 14px 0;
+    margin: 1em 0 5em 0;
+    border: none;
+    cursor: grab;
+    width: 48%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
