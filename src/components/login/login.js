@@ -1,12 +1,26 @@
 
 import './login.css';
+import firebase from '../../scripts/firebase';
 
+let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebase.apiKey}`;
 
 function loginPage(params) {
 
     function onSubmitHandler(e) {
-        e.preventDefault();
-        console.log(e.target.uname.value);
+       e.preventDefault();
+        let user = {
+            "email": e.target.mail.value,
+            "password": e.target.psw.value,
+        }
+
+        fetch(url, {
+            "method": "POST",
+            "body": JSON.stringify(user),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(r => r.json())
+            .then(d => console.log(d))
+
     }
     return (
         <main>
@@ -16,8 +30,8 @@ function loginPage(params) {
                     
                     <div className="formcontainer-login">
                         <div className="container-login">
-                            <label htmlFor="uname"><strong>Username</strong></label>
-                            <input type="text" id="uname" placeholder="Enter Username" name="uname" required />
+                            <label htmlFor="mail"><strong>Email</strong></label>
+                            <input type="text" id="mail" placeholder="Enter Email" name="mail" required />
                             <label htmlFor="psw"><strong>Password</strong></label>
                             <input type="password" id="psw" placeholder="Enter Password" name="psw" required />
                             </div>

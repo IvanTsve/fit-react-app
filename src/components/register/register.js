@@ -1,20 +1,38 @@
-import { Link } from 'react-router-dom';
-import './register.css';
+import React, { useState } from 'react';
 
+import firebase from '../../scripts/firebase';
+import './register.css';
 
 function registerPage(params) {
 
-    function onSubmitHandler(e) {
+    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${firebase.apiKey}`;
+
+
+    function onRegisterHandler(e) {
         e.preventDefault();
-        console.log(e.target.uname.value);
+
+        let user = {
+            "username": e.target.uname.value,
+            "email": e.target.mail.value,
+            "password": e.target.psw.value,
+        }
+        
+        fetch(url, {
+            "method": "POST",
+            "body": JSON.stringify(user),
+            headers: { 'Content-Type': 'application/json' }
+        })
+            .then(r => r.json())
+            .then(d => console.log(d))
+
+
     }
+
     return (
         <main>
             <div className="register-page img-background">
-
-                <form onSubmit={onSubmitHandler}>
+                <form onSubmit={onRegisterHandler}>
                     <h1>SIGN UP</h1>
-                   
                     <div className="formcontainer-register">
                         <div className="container-register">
                             <label htmlFor="uname"><strong>Username</strong></label>
@@ -28,7 +46,6 @@ function registerPage(params) {
                         </div>
                         <button type="submit"><strong>SIGN UP</strong></button>
                     </div>
-
                 </form>
             </div>
         </main>

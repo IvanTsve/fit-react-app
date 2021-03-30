@@ -4,7 +4,7 @@ function userProfile(params) {
     return (
         <section className="user-info">
             <div className="profile-picture">
-                <img src="https://image.shutterstock.com/image-vector/lawyer-avatar-job-profession-pixel-600w-1857197077.jpg" alt="profile picture" />
+                <img src="https://image.shutterstock.com/image-vector/lawyer-avatar-job-profession-pixel-600w-1857197077.jpg" alt="" />
             </div>
 
 
