@@ -1,35 +1,37 @@
-.register-page {
+.login-page {
     background-image: url(/src/images/young-girl-playing-dumbbell-exercise-fitness_34777-396.jpg); 
-    
 }
+
+
 
 form{
     position: relative;
 }
 
-.formcontainer-register {
+.formcontainer-login {
     text-align: center;
     margin: 80px 50px 12px;
 }
 
-.container-register {
+.container-login {
     padding: 16px 0;
     text-align: left;
+    margin-top: 5em;
 }
 
-input[type=text], input[type=password],textarea {
-    width: 100%;
-    padding: 16px 8px;
-    margin: 1.2em 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
+
 
 h1 {
     margin-left: 2em;
 }
 
+.icon {
+    font-size: 300px;
+    display: flex;
+    justify-content: flex-start;
+    color: #d35400;
+    margin: 0.2em;
+}
 
 button {
     background-color: #d35400;

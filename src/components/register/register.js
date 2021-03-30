@@ -11,13 +11,12 @@ function registerPage(params) {
     return (
         <main>
             <div className="register-page img-background">
+
                 <form onSubmit={onSubmitHandler}>
                     <h1>SIGN UP</h1>
-                    <div className="icon">
-                        <i className="fas fa-user-circle"/>
-                    </div>
-                    <div className="formcontainer">
-                        <div className="container">
+                   
+                    <div className="formcontainer-register">
+                        <div className="container-register">
                             <label htmlFor="uname"><strong>Username</strong></label>
                             <input type="text" id="uname" placeholder="Enter Username" name="uname" required />
                             <label htmlFor="mail"><strong>E-mail</strong></label>
