@@ -20,7 +20,7 @@ function registerPage(params) {
             "posts": [],
 
         }
-        return fetchUser(user,url)
+        return fetchUser(user,url, "POST")
 
         
     }

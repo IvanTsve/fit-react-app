@@ -1,11 +1,11 @@
 import firebase from '../scripts/firebase';
 
 
-function fetchUser(user, url) {
+function fetchUser(data, url, mathod) {
 
     return fetch(url, {
-        "method": "POST",
-        "body": JSON.stringify(user),
+        "method": mathod,
+        "body": JSON.stringify(data),
         headers: { 'Content-Type': 'application/json' }
     })
         .then(r => r.json())

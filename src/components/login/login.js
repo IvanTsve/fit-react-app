@@ -16,7 +16,7 @@ function loginPage(params) {
             "email": e.target.mail.value,
             "password": e.target.psw.value,
         }
-        fetchUser(user, url)
+        fetchUser(user, url, "POST")
             .then(r => {
                 if (!r.error) {
                     firebase.isLogged = true;
