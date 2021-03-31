@@ -3,7 +3,9 @@ import './register.css';
 import fetchUser from '../../scripts/fetch';
 import firebase from '../../scripts/firebase';
 
-function registerPage(params) {
+function registerPage({
+    history,
+}) {
 
     let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${firebase.apiKey}`;
 
@@ -21,6 +23,11 @@ function registerPage(params) {
 
         }
         return fetchUser(user,url, "POST")
+        .then(r => {
+            if (!r.error) {
+                history.push('/user/login');
+            }
+        })
 
         
     }

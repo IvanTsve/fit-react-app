@@ -1,13 +1,15 @@
 import './login.css';
 
 import React, { useState, useEffect } from 'react';
-
+import { Redirect } from "react-router";
 
 import fetchUser from '../../scripts/fetch';
 import firebase from '../../scripts/firebase';
 
 
-function loginPage(params) {
+function loginPage({
+    history,
+}) {
     let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebase.apiKey}`;
 
     function onSubmitHandler(e) {
@@ -21,9 +23,14 @@ function loginPage(params) {
                 if (!r.error) {
                     firebase.isLogged = true;
                     localStorage.setItem('userId', r.localId);
-                } 
+                    history.push('/');
+
+                }
             })
-            
+            .then(() => {
+            })
+
+
 
     }
     return (
