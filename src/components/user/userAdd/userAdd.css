@@ -1,0 +1,22 @@
+.postForm {
+    margin: 0 5em;
+}
+
+.postForm label {
+    color: white
+}
+
+input[type=text], input[type=password], textarea {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 1.2em 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin-left: 2em;
+    color: white;
+    text-shadow: 4px 4px 5px black;
+}
