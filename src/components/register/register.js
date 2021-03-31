@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 
-import firebase from '../../scripts/firebase';
 import './register.css';
+import fetchUser from '../../scripts/fetch';
+import firebase from '../../scripts/firebase';
 
 function registerPage(params) {
 
@@ -15,17 +15,14 @@ function registerPage(params) {
             "username": e.target.uname.value,
             "email": e.target.mail.value,
             "password": e.target.psw.value,
+            "followers": [],
+            "following": [],
+            "posts": [],
+
         }
+        return fetchUser(user,url)
+
         
-        fetch(url, {
-            "method": "POST",
-            "body": JSON.stringify(user),
-            headers: { 'Content-Type': 'application/json' }
-        })
-            .then(r => r.json())
-            .then(d => console.log(d))
-
-
     }
 
     return (
