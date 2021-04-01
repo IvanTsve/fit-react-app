@@ -22,13 +22,13 @@ function loginPage({
             .then(r => {
                 if (!r.error) {
                     firebase.isLogged = true;
-                    localStorage.setItem('userId', r.localId);
+                    let userData = { 'userId': r.localId, 'idToken': r.idToken }
+                    localStorage.setItem('userData', JSON.stringify(userData));
                     history.push('/');
-
+                    console.log(r);
                 }
             })
-            .then(() => {
-            })
+
 
 
 

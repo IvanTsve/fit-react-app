@@ -17,7 +17,9 @@ class Main extends Component {
                                 <li>workout plan based on your goals</li>
                                 <li>nutrition plan based on your goals</li>
                                 <li>weekly live sessions</li>
+                                <Link className="site-cta" to="/user/login">Login</Link>
                                 <Link className="site-cta" to="/user/register">JOIN</Link>
+
                             </ul>
                         </div>
                     </div>

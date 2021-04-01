@@ -1,7 +1,7 @@
 import './userAdd.css';
 import fetch from '../../../scripts/fetch';
 function userAdd(params) {
-    let url = `https://fit-react-app-default-rtdb.firebaseio.com/.json`
+    let url = `https://fit-react-app-default-rtdb.firebaseio.com/.json`;
     function onSubmitHandler(e) {
         e.preventDefault();
         let data = {
@@ -11,10 +11,9 @@ function userAdd(params) {
             "uid": localStorage.getItem('userId'),
         }
         return fetch(data, url, "POST")
-            .then(r => console.log(r))
-
-
+        
     }
+
     return (
         <section className="postForm">
             <form onSubmit={onSubmitHandler}>
