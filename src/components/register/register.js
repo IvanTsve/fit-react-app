@@ -7,9 +7,6 @@ function registerPage({
     history,
 }) {
 
-    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${firebase.apiKey}`;
-
-
     function onRegisterHandler(e) {
         e.preventDefault();
 
@@ -22,10 +19,15 @@ function registerPage({
             "posts": [],
 
         }
+        if (user.password !== e.target.repsw.value) {
+            // TODO ERR
+            return
+        }
 
         firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((userCredential) => {
           // Signed in 
+          history.push('/user/profile')
           var user = userCredential.user;
           // ...
         })

@@ -1,5 +1,6 @@
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router';
+import { useEffect, useState } from 'react';
 
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -12,9 +13,23 @@ import firebase from './scripts/firebase';
 
 
 function App() {
+
+  const [user, setUser] = useState(null)
+
+  useEffect(() => {
+
+    firebase.auth().onAuthStateChanged((authUser) => {
+      if (authUser) {
+        setUser(authUser)
+      } else {
+        setUser(null)
+      }
+    })
+  },[])
+
   return (
     <div className="App">
-      <Header />
+      <Header user={user} />
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/contact-us" exact component={ContactUs} />

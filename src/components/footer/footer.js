@@ -1,7 +1,10 @@
+import React, { Component } from "react";
 import './footer.css';
 
-function footer() {
-    return (
+class Footer extends Component {
+    render(props) {
+        return(
+
         <div>
             <ul className="site-footer">
                 <li>INSTAGRAM</li>
@@ -10,7 +13,9 @@ function footer() {
                 <li>PHONE</li>
             </ul>
         </div>
-    )
+        )
+
+    }
 }
 
-export default footer;
+export default Footer;

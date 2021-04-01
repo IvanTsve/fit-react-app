@@ -20,6 +20,8 @@ function loginPage({
             .then((userCredential) => {
                 // Signed in
                 var user = userCredential.user;
+                history.push('/user/profile')
+
                 console.log(user);
                 // ...
             })
