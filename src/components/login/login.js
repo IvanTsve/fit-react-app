@@ -1,9 +1,6 @@
 import './login.css';
 
-import React, { useState, useEffect } from 'react';
-import { Redirect } from "react-router";
 
-import fetchUser from '../../scripts/fetch';
 import firebase from '../../scripts/firebase';
 
 
@@ -18,20 +15,18 @@ function loginPage({
             "email": e.target.mail.value,
             "password": e.target.psw.value,
         }
-        fetchUser(user, url, "POST")
-            .then(r => {
-                if (!r.error) {
-                    firebase.isLogged = true;
-                    let userData = { 'userId': r.localId, 'idToken': r.idToken }
-                    localStorage.setItem('userData', JSON.stringify(userData));
-                    history.push('/');
-                    console.log(r);
-                }
+
+        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+            .then((userCredential) => {
+                // Signed in
+                var user = userCredential.user;
+                console.log(user);
+                // ...
             })
-
-
-
-
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
     }
     return (
         <main>

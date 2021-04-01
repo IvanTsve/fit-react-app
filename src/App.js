@@ -8,6 +8,8 @@ import ContactUs from './components/contacts/contacts';
 import User from './components/user/user';
 import Register from './components/register/register';
 import Login from './components/login/login'
+import Logout from './components/Logout/logout'
+
 
 function App() {
   return (
@@ -19,7 +21,7 @@ function App() {
         <Route path="/user/profile" exact component={User} />
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
-        <Route path="/user/logout" exact component={ContactUs} />
+        <Route path="/user/logout" exact component={Logout} />
       </Switch>
       <Footer />
     </div>

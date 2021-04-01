@@ -1,3 +1,9 @@
+import firebase from "firebase/app";
+
+import "firebase/auth";
+import "firebase/firestore";
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyBJ6oNOhZlXlgHUkg3gXWjPrh6dtCI8qVA",
     authDomain: "fit-react-app.firebaseapp.com",
@@ -8,6 +14,6 @@ const firebaseConfig = {
     isLogged: false
   };
   // Initialize Firebase
-  //firebase.initializeApp(firebaseConfig);
+  firebase.initializeApp(firebaseConfig);
 
-  export default firebaseConfig;
+  export default firebase;

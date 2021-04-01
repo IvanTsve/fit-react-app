@@ -1,7 +1,7 @@
 
 import './register.css';
-import fetchUser from '../../scripts/fetch';
 import firebase from '../../scripts/firebase';
+
 
 function registerPage({
     history,
@@ -22,12 +22,18 @@ function registerPage({
             "posts": [],
 
         }
-        return fetchUser(user,url, "POST")
-        .then(r => {
-            if (!r.error) {
-                history.push('/user/login');
-            }
+
+        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+        .then((userCredential) => {
+          // Signed in 
+          var user = userCredential.user;
+          // ...
         })
+        .catch((error) => {
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ..
+        });
 
         
     }
