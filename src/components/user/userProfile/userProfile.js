@@ -1,7 +1,5 @@
 import './userProfile.css';
 
-import { useState, useEffect } from 'react';
-import fetchUser from '../../../scripts/fetch';
 
 function UserProfile(params) {
     

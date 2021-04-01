@@ -1,16 +1,8 @@
 import './userAdd.css';
-import fetch from '../../../scripts/fetch';
 function userAdd(params) {
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/.json`;
     function onSubmitHandler(e) {
-        e.preventDefault();
-        let data = {
-            "pictureUrl": e.target.pictureUrl.value,
-            "title": e.target.title.value,
-            "content": e.target.content.value,
-            "uid": localStorage.getItem('userId'),
-        }
-        return fetch(data, url, "POST")
+        
         
     }
 

@@ -13,7 +13,17 @@ const firebaseConfig = {
     appId: "1:424716130007:web:9a4f21589ee89447834292",
     isLogged: false
   };
+
+  
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+
+  firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      console.log(1);
+    } else {
+      console.log(2);
+    }
+  })
 
   export default firebase;

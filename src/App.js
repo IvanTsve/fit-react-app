@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch, Route } from 'react-router';
+import { Switch, Route, Redirect } from 'react-router';
 
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -7,8 +7,8 @@ import Main from './components/main/main';
 import ContactUs from './components/contacts/contacts';
 import User from './components/user/user';
 import Register from './components/register/register';
-import Login from './components/login/login'
-import Logout from './components/Logout/logout'
+import Login from './components/login/login';
+import firebase from './scripts/firebase';
 
 
 function App() {
@@ -21,7 +21,11 @@ function App() {
         <Route path="/user/profile" exact component={User} />
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
-        <Route path="/user/logout" exact component={Logout} />
+        <Route path="/user/logout" render={prop => {
+          firebase.auth().signOut();
+          return (<Redirect to='/' />)
+
+        }} />
       </Switch>
       <Footer />
     </div>

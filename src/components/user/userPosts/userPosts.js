@@ -1,22 +1,10 @@
 import {Link} from 'react-router-dom';
 import './userPosts.css';
 
-import { useState, useEffect } from 'react';
-
-import fetchData from '../../../scripts/fetch';
-import firebase from '../../../scripts/firebase';
 
 function UserPost(params) {
 
-        // let url = `https://${firebase.projectId}.firebaseio.com/`;
-
-        // useEffect(() => {
-        //     fetch(url)
-        //     .then(r => r.json())
-        //     .then(d => console.log(d))
-        // })
-
-
+       
     return (
             <section className="user-posts">
                
