@@ -1,23 +1,14 @@
 import './login.css';
-
-
 import firebase from '../../scripts/firebase';
-
 
 function loginPage({
     history,
 }) {
-
     function onSubmitHandler(e) {
         e.preventDefault();
-   
         firebase.auth().signInWithEmailAndPassword(e.target.mail.value, e.target.psw.value)
             .then((userCredential) => {
-               console.log(userCredential);
-                // Signed in
-                
                 history.push('/user/profile')
-                // ...
             })
             .catch((error) => {
                 var errorCode = error.code;

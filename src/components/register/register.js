@@ -19,21 +19,17 @@ function registerPage({
         }
         if (user.password !== e.target.repsw.value) {
             // TODO ERR
-            return
+            return 
         }
        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then((userCredential) => {
-           // console.log(userCredential);
             history.push('/user/profile')
-            // Signed in 
         })
         .catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
-            // ..
         });
     }
-
     return (
         <main>
             <div className="register-page img-background">

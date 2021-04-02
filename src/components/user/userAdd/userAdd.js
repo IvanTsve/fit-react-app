@@ -3,6 +3,11 @@ import './userAdd.css';
 import fetchData from '../../../scripts/fetchData';
 
 function userAdd(params) {
+
+     console.log(`paramsss ${params.post}`);
+    // console.log(`paramsss ${Object.entries(params)}`);
+
+
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts.json`;
     function addPost(e) {
         e.preventDefault();
@@ -13,7 +18,6 @@ function userAdd(params) {
         }
         fetchData("POST", url, data)
         .then(r => r.json())
-        .then(r => console.log(r))
         
     }
 
@@ -22,7 +26,7 @@ function userAdd(params) {
                 <h1>Post</h1>
             <form onSubmit={addPost}>
                 <label htmlFor="pictureUrl"><strong>EpictureUrl</strong></label>
-                <input type="text" id="pictureUrl" placeholder="Enter picture url" name="pictureUrl" required />
+                <input type="text" id="pictureUrl" placeholder="Enter picture url" name="pictureUrl" required value={params.title} />
                 <label htmlFor="title"><strong>Title</strong></label>
                 <input type="text" id="title" placeholder="Enter title" name="title" required />
                 <label htmlFor="content"><strong>Content</strong></label>

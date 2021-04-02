@@ -1,6 +1,7 @@
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router';
 import { useEffect, useState } from 'react';
+import firebase from './scripts/firebase';
 
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
@@ -9,7 +10,7 @@ import ContactUs from './components/contacts/contacts';
 import User from './components/user/user';
 import Register from './components/register/register';
 import Login from './components/login/login';
-import firebase from './scripts/firebase';
+import EditPage from './components/EditPost/editPost';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" exact component={Main} />
         <Route path="/contact-us" exact component={ContactUs} />
         <Route path="/user/profile" exact component={User}/>
+        <Route path="/user/post/:id/edit" exact component={EditPage}/>
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
         <Route path="/user/logout" render={prop => {
