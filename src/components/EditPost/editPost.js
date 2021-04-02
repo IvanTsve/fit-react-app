@@ -1,7 +1,3 @@
-import '../EditPost/editPost.css'
-import UserAdd from '../user/userAdd/userAdd';
-import PostCard from '../postCard/postCard';
-
 import { useEffect, useState } from 'react';
 
 import fetchData from '../../scripts/fetchData'
@@ -21,7 +17,6 @@ function EditPost({
                 })
 
     }, []);
-console.log(post);
     function updatePost(e) {
         e.preventDefault();
         
