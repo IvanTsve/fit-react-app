@@ -1,8 +1,11 @@
 import './userProfile.css';
+import firebase from '../../../scripts/firebase';
+import { useEffect, useState } from 'react';
 
+function UserProfile({
+}) {
 
-function UserProfile(params) {
-    
+   
 
     return (
         <section className="user-info">
@@ -14,11 +17,11 @@ function UserProfile(params) {
             <div className="profile-content">
                 <div className="user-name">
                     <p>Jane Doe</p>
+                    
                 </div>
                 <div className="user-activity">
-                    <p>follower</p>
-                    <p>following</p>
-                    <p>posts</p>
+                   
+                    <p>posts 2</p>
                 </div>
                 <div className="user-bio">
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>

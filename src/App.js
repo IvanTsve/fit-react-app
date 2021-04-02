@@ -33,7 +33,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Main} />
         <Route path="/contact-us" exact component={ContactUs} />
-        <Route path="/user/profile" exact component={User} />
+        <Route path="/user/profile" exact component={User}/>
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
         <Route path="/user/logout" render={prop => {

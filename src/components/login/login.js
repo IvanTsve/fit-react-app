@@ -7,22 +7,14 @@ import firebase from '../../scripts/firebase';
 function loginPage({
     history,
 }) {
-    let url = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${firebase.apiKey}`;
 
     function onSubmitHandler(e) {
         e.preventDefault();
-        let user = {
-            "email": e.target.mail.value,
-            "password": e.target.psw.value,
-        }
-
-        firebase.auth().signInWithEmailAndPassword(user.email, user.password)
+   
+        firebase.auth().signInWithEmailAndPassword(e.target.mail.value, e.target.psw.value)
             .then((userCredential) => {
                 // Signed in
-                var user = userCredential.user;
                 history.push('/user/profile')
-
-                console.log(user);
                 // ...
             })
             .catch((error) => {

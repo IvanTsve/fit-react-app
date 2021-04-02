@@ -1,10 +1,8 @@
-import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import './header.css';
 function Header({
     user
 }) {
-
     return (
         <header className="site-header">
             <Link to="/">Brain Gains</Link>

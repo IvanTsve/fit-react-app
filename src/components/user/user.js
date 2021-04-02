@@ -4,7 +4,9 @@ import UserAdd from './userAdd/userAdd';
 
 import './user.css';
 
-function User(params) {
+function User({
+    user,
+}) {
     return (
         <main >
             <div className="site-main">
