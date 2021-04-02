@@ -1,43 +1,56 @@
 import { Link } from 'react-router-dom';
 import './userPosts.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import fetchData from '../../../scripts/fetchData';
+import { render } from '@testing-library/react';
+import postCard from '../../postCard/postCard'
 
-function UserPost(params) {
-
-
-
+function UserPost(props) {
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts.json`;
-
+    const [posts, setPosts] = useState([]);
     useEffect(() => {
         fetchData("GET", url)
             .then(r => r.json())
-            .then(r => {
-                let data = Object.entries(r)
-                console.log(data);
-                console.log(r);
+            .then((r) => {
+                setPosts(Object.entries(r))
             })
-    });
+    }, []);
 
-    const numbers = [1, 2, 3, 4, 5];
-    const listItems = numbers.map((number) =>
-        <li key={number.toString()}>
-            {number}
-        </li>
-    );
+    // <div className="post" key={x[0]}>
+    //     <p>{x[1].title}</p>
+    //     <img src={x[1].pictureUrl} alt="" />
+    //     <p className="post-introduction">{x[1].content}</p>
+    //     <Link className="CTA-read" to="#">ReadMore</Link>
+    // </div>
 
+
+    // let posts = [{
+    //     "content": "123",
+    //     "pictureUrl": "321",
+    //     "title": "asdfafds",
+    // }, {
+    //     "content": "123",
+    //     "pictureUrl": "321",
+    //     "title": "asdfafds",
+    // }]
+
+    console.log(posts);
 
     return (
         <section className="user-posts">
-            <ul>{listItems}</ul>,
-            <div className="post">
-                <img src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" />
-                <p className="post-introduction">lorem ipsum lorem ipsumlorem ipsum</p>
-                <Link className="CTA-read" to="#">ReadMore</Link>
-            </div>
+
+            {posts.map(post => 
+                <div className="post" key={post[0]}>
+                    <p>{post[1].title}</p>
+                    <img src={post[1].pictureUrl} alt="" />
+                    <p className="post-introduction">{post[1].content}</p>
+                    <Link className="CTA-read" to="#">ReadMore</Link>
+                </div>
+            )}
         </section>
-    )
+    );
+
 }
 
 export default UserPost;

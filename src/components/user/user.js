@@ -15,8 +15,6 @@ function User({
                 <UserPost />
 
             </div>
-
-
         </main>
     )
 }
