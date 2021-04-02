@@ -1,19 +1,14 @@
 import { Link } from 'react-router-dom';
 
-const postCard = ({
-    title,
-    pictureUrl,
-    description,
-    content,
+const postCard = (...props) => {
     
-}) => {
 
     return (
-        <div className="post" >
-            <p>{title}</p>
+        <div className="post">
+            {/* <p>{title}</p>
             <img src={pictureUrl} alt="" />
-            <p className="post-introduction">{content}</p>
-            <Link className="CTA-read" to="#">ReadMore</Link>
+            <p className="post-introduction">{content}</p> */}
+            {/* <Link className="CTA-read" to={`/user/post/${id}/edit`} id={id}>ReadMore</Link> */}
         </div>
     );
 

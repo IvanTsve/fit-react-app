@@ -3,49 +3,45 @@ import './userPosts.css';
 import { useEffect, useState } from 'react';
 
 import fetchData from '../../../scripts/fetchData';
-import { render } from '@testing-library/react';
-import postCard from '../../postCard/postCard'
+
+
+import userAdd from '../userAdd/userAdd';
+
 
 function UserPost(props) {
-    let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts.json`;
+
     const [posts, setPosts] = useState([]);
+    const [post, setPost] = useState({});
+
+    let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts`;
     useEffect(() => {
-        fetchData("GET", url)
+        fetchData("GET", `${url}.json`)
             .then(r => r.json())
             .then((r) => {
                 setPosts(Object.entries(r))
             })
     }, []);
 
-    // <div className="post" key={x[0]}>
-    //     <p>{x[1].title}</p>
-    //     <img src={x[1].pictureUrl} alt="" />
-    //     <p className="post-introduction">{x[1].content}</p>
-    //     <Link className="CTA-read" to="#">ReadMore</Link>
-    // </div>
-
-
-    // let posts = [{
-    //     "content": "123",
-    //     "pictureUrl": "321",
-    //     "title": "asdfafds",
-    // }, {
-    //     "content": "123",
-    //     "pictureUrl": "321",
-    //     "title": "asdfafds",
-    // }]
-
-    console.log(posts);
+    const edditPost = (e) => {
+        e.preventDefault();
+        // console.log(posts);
+        fetchData("GET", `${url}/${e.target.id}.json`)
+            .then(r => r.json())
+            .then((r) => {
+                setPost(r);
+               
+            })
+        }
 
     return (
         <section className="user-posts">
 
-            {posts.map(post => 
+            {posts.map(post =>
                 <div className="post" key={post[0]}>
                     <p>{post[1].title}</p>
                     <img src={post[1].pictureUrl} alt="" />
                     <p className="post-introduction">{post[1].content}</p>
-                    <Link className="CTA-read" to="#">ReadMore</Link>
+                    <Link className="CTA-read" to={`/user/post/${post[0]}/edit`} id={post[0]} onClick={edditPost}>Edit Post</Link>
                 </div>
             )}
         </section>
