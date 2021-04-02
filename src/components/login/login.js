@@ -13,7 +13,9 @@ function loginPage({
    
         firebase.auth().signInWithEmailAndPassword(e.target.mail.value, e.target.psw.value)
             .then((userCredential) => {
+               console.log(userCredential);
                 // Signed in
+                
                 history.push('/user/profile')
                 // ...
             })

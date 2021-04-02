@@ -23,9 +23,6 @@ function UserProfile({
                    
                     <p>posts 2</p>
                 </div>
-                <div className="user-bio">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard</p>
-                </div>
                 <div className="socials">
                     <ul>
                         <li>add link IG</li>

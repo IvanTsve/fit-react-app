@@ -2,6 +2,7 @@
 import './register.css';
 import firebase from '../../scripts/firebase';
 
+import fetchData from '../../scripts/fetchData';
 
 function registerPage({
     history,
@@ -11,33 +12,40 @@ function registerPage({
         e.preventDefault();
 
         let user = {
-            "username": e.target.uname.value,
+            "displayName": e.target.uname.value,
             "email": e.target.mail.value,
             "password": e.target.psw.value,
-            "followers": [],
-            "following": [],
-            "posts": [],
 
         }
         if (user.password !== e.target.repsw.value) {
             // TODO ERR
             return
         }
+        const promise1 = firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+        // .then((userCredential) => {
+        //     console.log(userCredential);
+        //     history.push('/user/profile')
+        //     // Signed in 
+        //     var user = userCredential.user;
+        //     // ...
+        // })
+        // .catch((error) => {
+        //     var errorCode = error.code;
+        //     var errorMessage = error.message;
+        //     // ..
+        // });
 
-        firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-        .then((userCredential) => {
-          // Signed in 
-          history.push('/user/profile')
-          var user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // ..
-        });
+        // .then(r => r.json())
+        // .then(r => console.log(r))
 
-        
+        Promise.all([promise1])
+            .then((values) => {
+                fetchData(`https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBJ6oNOhZlXlgHUkg3gXWjPrh6dtCI8qVA`, "POST", {
+                    "email": e.target.mail.value,
+                    "idToken": values.uid,
+                    "photoUrl": "https://thispersondoesnotexist.com/image",
+                })
+            });
     }
 
     return (
