@@ -1,3 +1,5 @@
+import './postCard.css'
+
 import { Link } from 'react-router-dom';
 
 const postCard = (...props) => {
@@ -9,7 +11,7 @@ const postCard = (...props) => {
             <p>{post[1].title}</p>
             <img src={post[1].pictureUrl} alt="" />
             <p className="post-introduction">{post[1].content}</p> 
-            <Link className="CTA-read" to={`/user/post/${post[0]}/edit`} id={post[0]}>ReadMore</Link>
+            <Link className="CTA-read editPost" to={`/user/post/${post[0]}/edit`} id={post[0]}>Edit post</Link>
         </div>
         )} 
         </>
