@@ -10,25 +10,35 @@ function registerPage({
 
     function onRegisterHandler(e) {
         e.preventDefault();
-
+        let userUrl = `https://fit-react-app-default-rtdb.firebaseio.com/users.json`;
         let user = {
             "displayName": e.target.uname.value,
             "email": e.target.mail.value,
             "password": e.target.psw.value,
+            "userPicture": `https://images.unsplash.com/photo-1575939238474-c8ada13b2724?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80`,
 
         }
         if (user.password !== e.target.repsw.value) {
             // TODO ERR
-            return 
+            return
         }
-       firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
-        .then((userCredential) => {
-            history.push('/user/profile')
-        })
-        .catch((error) => {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        });
+        const firebaseAuth = firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
+           
+        Promise.allSettled([firebaseAuth])
+            .then((r) => {
+                if (r[0].status === "fulfilled") {
+                    fetchData("POST", userUrl, user)
+                }
+                history.push('/user/profile')
+
+            })
+            .catch((error) => {
+                    var errorCode = error.code;
+                    var errorMessage = error.message;
+                    console.log(`${errorMessage}`)
+    
+                });
+
     }
     return (
         <main>
