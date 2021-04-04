@@ -12,17 +12,7 @@ function userAdd({ ...params }) {
     // console.log(`paramsss ${Object.entries(params)}`);
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts.json`;
 
-    function updatePost(e) {
-        e.preventDefault();
-        console.log(e.target);
-        // const data = {
-        //     "pictureUrl": e.target.pictureUrl.value,
-        //     "title": e.target.title.value,
-        //     "content": e.target.content.value,
-        // }
-        // fetchData("PUT", url, data)
-        //     .then(r => r.json())
-    }
+    
 
     function addPost(e) {
         e.preventDefault();
@@ -37,7 +27,6 @@ function userAdd({ ...params }) {
     }
 
     return (
-        <main>
             <section className="postForm">
                 <form onSubmit={addPost}>
                     <label htmlFor="pictureUrl"><strong>EpictureUrl</strong></label>
@@ -48,9 +37,7 @@ function userAdd({ ...params }) {
                     <textarea name="content" id="content" cols="50" rows="10" placeholder="Enter your post"></textarea>
                     <button type="submit"><strong>Post</strong></button>
                 </form>
-
             </section>
-        </main>
     )
 }
 

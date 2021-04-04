@@ -29,12 +29,10 @@ function UserPost(props) {
     }
 
     return (
-        <main>
             <section className="user-posts" >
                     <PostCard posts={posts}/>
 
             </section>
-        </main>
     );
 
 }
