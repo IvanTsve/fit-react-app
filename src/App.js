@@ -8,6 +8,7 @@ import Footer from './components/footer/footer';
 import Main from './components/main/main';
 import ContactUs from './components/contacts/contacts';
 import User from './components/user/user';
+import Posts from './components/user/userPosts/userPosts';
 import Register from './components/register/register';
 import Login from './components/login/login';
 import EditPage from './components/EditPost/editPost';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/contact-us" exact component={ContactUs} />
         <Route path="/user/profile" exact component={User}/>
         <Route path="/user/post/:id/edit" exact component={EditPage}/>
+        <Route path="/user/posts" exact component={Posts}/>
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
         <Route path="/user/logout" render={prop => {

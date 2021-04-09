@@ -1,11 +1,13 @@
 import './userProfile.css';
 import firebase from '../../../scripts/firebase';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+
+import UserContext from '../../../context/userContext';
+
 
 function UserProfile({
 }) {
 
-   
 
     return (
         <section className="user-info">
@@ -16,11 +18,11 @@ function UserProfile({
 
             <div className="profile-content">
                 <div className="user-name">
-                    <p>Jane Doe</p>
-                    
+                    <p></p>
+
                 </div>
                 <div className="user-activity">
-                   
+
                     <p>posts 2</p>
                 </div>
                 <div className="socials">

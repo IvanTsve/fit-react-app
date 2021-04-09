@@ -3,41 +3,42 @@ import './login.css';
 import firebase from '../../scripts/firebase';
 import fetchData from '../../scripts/fetchData';
 
-function loginPage({
+import React, { useEffect, useState } from 'react';
+
+
+function LoginPage({
     history,
 }) {
+    const [userMail, setUserMail] = useState('');
+    const [users, setUsers] = useState([]);
+    let user = users.find(x => x => x.email === userMail);
+
     function onSubmitHandler(e) {
         e.preventDefault();
-
         let url = `https://fit-react-app-default-rtdb.firebaseio.com/users.json`;
-
-        const firebaseAuth = firebase.auth().signInWithEmailAndPassword(e.target.mail.value, e.target.psw.value)
-
-        Promise.resolve(firebaseAuth)
-            .then((res) => {
-             //   const userMail = res.user.email;
-            //     fetchData("GET", url)
-            //     .then(r => r.json())
-            //     .then(r => {
-            //         let arr = Object.entries(r);
-            //        arr.map()
-            //   //      console.log(arr.map(x => x.email === userMail));                    
-         //       })
+        firebase.auth().signInWithEmailAndPassword(e.target.mail.value, e.target.psw.value)
+            .then(r => {
+                let a = r.user.email
+                setUserMail(r.user.email);
                 history.push('/user/profile')
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
             });
-
-        // const userFetch = fetchData("GET")
-        // .then(r=>r.json())
-        // .then(d => console.log(d))
-
-        //Promise.all([userFetch,userAuth])
-
+        fetchData("GET", url)
+            .then(r => r.json())
+            .then(r => {
+                setUsers(Object.entries(r))
+            })
+            .catch((error) => {
+                var errorCode = error.code;
+                var errorMessage = error.message;
+            });
     }
+
     return (
+
         <main>
             <div className="login-page img-background">
                 <form onSubmit={onSubmitHandler}>
@@ -56,7 +57,8 @@ function loginPage({
                 </form>
             </div>
         </main>
+
     )
 }
 
-export default loginPage;
+export default LoginPage;

@@ -5,14 +5,15 @@ function Header({
 }) {
     return (
         <header className="site-header">
-            <Link to="/">Brain Gains</Link>
+            {!user ? <Link to="/">Brain Gains</Link> : null}
             <nav className="header-navigation">
                 <ul>
                     {user ? <li><Link to="/user/profile">Profile</Link></li> : null}
+                    {user ? <li><Link to="/user/posts">Posts</Link></li> : null}
                     <li><Link to="/contact-us">Contacts</Link></li>
                     {user ? <li><Link to="/user/logout">Logout</Link></li> : null}
-                    {!user ?  <li><Link to="/user/login">Login</Link></li>: null}
-                    {!user ?  <li><Link to="/user/register">Register</Link></li>: null}
+                    {!user ? <li><Link to="/user/login">Login</Link></li> : null}
+                    {!user ? <li><Link to="/user/register">Register</Link></li> : null}
 
                 </ul>
 

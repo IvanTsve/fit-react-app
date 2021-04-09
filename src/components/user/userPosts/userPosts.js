@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './userPosts.css';
 import { useEffect, useState } from 'react';
 
@@ -15,22 +14,17 @@ function UserPost(props) {
         fetchData("GET", `${url}.json`)
             .then(r => r.json())
             .then((r) => {
-                setPosts(Object.entries(r))
+                if (r) {
+                    setPosts(Object.entries(r))
+                }
             })
     }, []);
 
-    const edditPost = (e) => {
-        e.preventDefault();
-        fetchData("GET", `${url}/${e.target.id}.json`)
-            .then(r => r.json())
-            .then((r) => {
-                setPost(r);
-            })
-    }
+    
 
     return (
             <section className="user-posts" >
-                    <PostCard posts={posts}/>
+                    {posts ? <PostCard posts={posts}/> : null}
 
             </section>
     );
