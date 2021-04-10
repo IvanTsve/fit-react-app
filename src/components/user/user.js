@@ -1,5 +1,6 @@
 import UserProfile from './userProfile/userProfile';
 import UserAdd from './userAdd/userAdd';
+import UserPosts from './userPosts/userPosts';
 
 import UserContext from '../../context/userContext';
 

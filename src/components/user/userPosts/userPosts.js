@@ -20,13 +20,14 @@ function UserPost(props) {
             })
     }, []);
 
-    
 
     return (
+        <main>
             <section className="user-posts" >
-                    {posts ? <PostCard posts={posts}/> : null}
-
+                {posts.map(x => <PostCard posts={x} />)}
             </section>
+        </main>
+
     );
 
 }

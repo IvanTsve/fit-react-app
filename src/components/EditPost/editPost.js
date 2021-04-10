@@ -30,10 +30,11 @@ function EditPost({
                 history.push(`/user/posts`);
             })
 
-    }
 
+
+    }
     return (
-        <main>
+        <main className="site-main">
             <section className="postForm">
                 <form onSubmit={updatePost}>
                     <label htmlFor="pictureUrl"><strong>EpictureUrl</strong></label>

@@ -3,7 +3,7 @@ import './login.css';
 import firebase from '../../scripts/firebase';
 import fetchData from '../../scripts/fetchData';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 
 function LoginPage({
