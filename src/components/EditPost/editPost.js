@@ -6,7 +6,6 @@ function EditPost({
     history,
 }) {
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts`;
-
     const [post, setPost] = useState({});
     useEffect(() => {
         fetchData("GET", `${url}/${match.params.id}.json`)
@@ -18,7 +17,6 @@ function EditPost({
 
     function updatePost(e) {
         e.preventDefault();
-
         const data = {
             "pictureUrl": e.target.pictureUrl.value,
             "title": e.target.title.value,
@@ -29,9 +27,6 @@ function EditPost({
             .then(r => {
                 history.push(`/user/posts`);
             })
-
-
-
     }
     return (
         <main className="site-main">
@@ -47,7 +42,6 @@ function EditPost({
                 </form>
             </section>
         </main>
-
     )
 }
 

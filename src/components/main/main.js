@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import './main.css';
 
-
 class Main extends Component {
     render() {
         return (
@@ -19,12 +18,10 @@ class Main extends Component {
                                 <li>weekly live sessions</li>
                                 <Link className="site-cta" to="/user/login">Login</Link>
                                 <Link className="site-cta" to="/user/register">JOIN</Link>
-
                             </ul>
                         </div>
                     </div>
                 </div>
-
             </main>
         )
     }

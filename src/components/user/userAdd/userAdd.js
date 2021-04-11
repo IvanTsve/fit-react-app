@@ -6,22 +6,21 @@ function UserAdd({
     history,
 }) {
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts.json`;
-        function addPost(e) {
-            e.preventDefault();
-            const data = {
-                "pictureUrl": e.target.pictureUrl.value,
-                "title": e.target.title.value,
-                "content": e.target.content.value,
-            }
-            fetchData("POST", url, data)
-                .then(r => {
-                    r.json()
-                }) 
-                .then(r => {
-                    history.push(`/user/posts`)
-                })
+    function addPost(e) {
+        e.preventDefault();
+        const data = {
+            "pictureUrl": e.target.pictureUrl.value,
+            "title": e.target.title.value,
+            "content": e.target.content.value,
         }
-
+        fetchData("POST", url, data)
+            .then(r => {
+                r.json()
+            })
+            .then(r => {
+                history.push(`/user/posts`)
+            })
+    }
 
     return (
         <section className="postForm">

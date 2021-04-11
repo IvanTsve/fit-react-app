@@ -1,5 +1,4 @@
 import './postCard.css'
-
 import { Link } from 'react-router-dom';
 
 const postCard = (...props) => {
@@ -15,7 +14,6 @@ const postCard = (...props) => {
             </div>
         </>
     );
-
 }
 
 export default postCard;

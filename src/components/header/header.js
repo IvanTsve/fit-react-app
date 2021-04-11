@@ -14,9 +14,7 @@ function Header({
                     {user ? <li><Link to="/user/logout">Logout</Link></li> : null}
                     {!user ? <li><Link to="/user/login">Login</Link></li> : null}
                     {!user ? <li><Link to="/user/register">Register</Link></li> : null}
-
                 </ul>
-
             </nav>
         </header>
     )

@@ -22,8 +22,6 @@ function registerPage({
             // TODO ERR
             return
         }
-
-     
         const firebaseAuth = firebase.auth().createUserWithEmailAndPassword(user.email, e.target.psw.value)
         Promise.allSettled([firebaseAuth])
             .then((r) => {
@@ -40,7 +38,6 @@ function registerPage({
                 var errorCode = error.code;
                 console.log(`${errorCode}`)
             });
-
     }
     return (
         <main>
@@ -59,7 +56,6 @@ function registerPage({
                             <input type="password" id="psw" placeholder="Enter Password" name="psw" required />
                             <label htmlFor="repsw"><strong>Re-Password</strong></label>
                             <input type="password" id="repsw" placeholder="Enter Re-Password" name="repsw" required />
-
                             <label htmlFor="ig"><strong>Instagram</strong></label>
                             <input type="text" id="ig" placeholder="Enter Instagram account" name="ig" />
                             <label htmlFor="fb"><strong>FaceBook</strong></label>
