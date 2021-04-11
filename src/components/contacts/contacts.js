@@ -7,7 +7,7 @@ class Contacts extends Component {
         return (
             <main>
                 <div className="contact-page img-background">
-                    <form >
+                    <form action="mailto:youraddr@domain.tld" method="GET">
                         <h1>Constact US</h1>
                         <div className="formcontainer-contacts">
                             <div className="container-contacts">
