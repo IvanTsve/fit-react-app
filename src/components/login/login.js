@@ -1,7 +1,6 @@
 import './login.css';
 
 import firebase from '../../scripts/firebase';
-import fetchData from '../../scripts/fetchData';
 
 function LoginPage({
     history,
@@ -15,7 +14,7 @@ function LoginPage({
             })
             .catch((error) => {
                 var errorCode = error.code;
-                var errorMessage = error.message;
+                console.error(errorCode);
             });
     }
     return (

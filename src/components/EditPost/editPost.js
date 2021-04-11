@@ -7,7 +7,6 @@ function EditPost({
 }) {
     let url = `https://fit-react-app-default-rtdb.firebaseio.com/posts`;
 
-
     const [post, setPost] = useState({});
     useEffect(() => {
         fetchData("GET", `${url}/${match.params.id}.json`)
@@ -16,6 +15,7 @@ function EditPost({
                 setPost(r);
             })
     }, []);
+
     function updatePost(e) {
         e.preventDefault();
 

@@ -1,9 +1,6 @@
 import './userAdd.css';
-
 import fetchData from '../../../scripts/fetchData';
-
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
 
 function UserAdd({
     history,
