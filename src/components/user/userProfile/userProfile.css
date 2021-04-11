@@ -1,5 +1,5 @@
 .user-info {
-    width: 30%;
+    width: 50%;
 }
 
 .profile-picture {
@@ -36,24 +36,19 @@
     padding: 0 4em;
 }
 
-.socials {
-    /* border-top: 2px solid #000; */
-    position: relative;
-}
-
-.socials:before {
-    content: "";
-    position: absolute;
-    left: 25%;
-    bottom: -200%;
-    height: 2px;
-    width: 50%;
-    /* or 100px */
-    border-bottom: 2px solid #000;
-}
 
 .socials>ul {
     display: flex;
     justify-content: space-evenly;
     margin: 3em;
 }
+
+
+
+.socials a {
+    display: inline-block;
+    font-weight: 900;
+    padding-right: 10px;
+    font-size: 100px;
+}
+

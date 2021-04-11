@@ -22,14 +22,14 @@ function App() {
 
     firebase.auth().onAuthStateChanged((authUser) => {
       if (authUser) {
-        
-     //   console.log(authUser);
         setUser(authUser)
       } else {
         setUser(null)
       }
     })
   },[])
+
+  
 
   return (
     <div className="App">
@@ -43,7 +43,7 @@ function App() {
         <Route path="/user/login" exact component={Login} />
         <Route path="/user/register" exact component={Register} />
         <Route path="/user/logout" render={prop => {
-          firebase.auth().signOut();
+          firebase.auth().signOut().then(r => localStorage.removeItem("em"));
           return (<Redirect to='/' />)
 
         }} />
